@@ -16,7 +16,6 @@ const config = {
     'tvhWeight': env('TVH_WEIGHT', 300),  // subscription priority
     'chunkSize': env('TVH_CHUNK_SIZE', 1024*1024),  // usually you don't need to edit this
     'streamProfile': env('TVH_PROFILE', 'pass')  // specifiy a stream profile that you want to use for adhoc transcoding in tvh, e.g. mp4
-
 };
 
 const device = {
@@ -104,7 +103,7 @@ app.get('/lineup.json', (req, res) => {
         res.send(JSON.stringify(lineup));
     }).catch(error => {
         res.send(error);
-    })
+    });
 });
 
 app.listen(5004, () => console.log('Listening on port 5004.'));
